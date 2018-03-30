@@ -1,33 +1,26 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Link from 'gatsby-link'
+import { Menu } from 'semantic-ui-react'
 
-const Header = () => (
-  <div
-    style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem',
-    }}
-  >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          Gatsby
-        </Link>
-      </h1>
-    </div>
-  </div>
-)
+class Header extends Component {
+
+  state = { activeItem: 'home' }
+
+  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+
+  render() {
+
+    const { activeItem } = this.state
+    
+    return(
+      <Menu color={'blue'} inverted widths={3}>
+        <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick} />
+        <Menu.Item name='messages' active={activeItem === 'messages'} onClick={this.handleItemClick} />
+        <Menu.Item name='friends' active={activeItem === 'friends'} onClick={this.handleItemClick} />
+      </Menu>
+    )
+  }
+  
+}
 
 export default Header

@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "gatsby-link";
+import 'semantic-ui-css/semantic.min.css';
 
 export default ({ data }) => {
   console.log(data);

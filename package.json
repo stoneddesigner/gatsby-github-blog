@@ -10,7 +10,9 @@
     "gatsby-source-filesystem": "^1.5.27",
     "gatsby-transformer-remark": "^1.7.37",
     "gh-pages": "^1.1.0",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "semantic-ui-css": "^2.3.1",
+    "semantic-ui-react": "^0.79.0"
   },
   "keywords": [
     "gatsby"
@@ -20,7 +22,8 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write 'src/**/*.js'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "devDependencies": {
     "prettier": "^1.11.1"
